@@ -1,15 +1,99 @@
 (function () {
     // invocation
-    Preloader();
-    sliderAbout();
-    Tabs();
-    jsForm();
+    slider();
     burger();
-    modal();
-    smoothScrollLinks();
-    toTop();
-    Tween();
-    scrollMagic();
+
+    // Preloader();
+    // sliderAbout();
+    // Tabs();
+    // jsForm();
+    // burger();
+    // modal();
+    // smoothScrollLinks();
+    // toTop();
+    // Tween();
+    // scrollMagic();
+
+    ///slider
+
+    function slider() {
+        //Slider
+
+        var slideIndex = 1;
+        var timer = null;
+        var prev = document.querySelector(".prev");
+        var next = document.querySelector(".next");
+
+        showSlides(slideIndex);
+
+        prev.addEventListener("click", plusSlides);
+        next.addEventListener("click", plusSlides);
+
+        // Next/previous controls
+        function plusSlides(event) {
+            clearTimeout(timer);
+            event.target === next ? n = 1 : n = -1;
+            showSlides(slideIndex += n);
+        }
+
+
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("slides");
+            var dots = [...document.getElementsByClassName("dot")];
+
+            dots.forEach((dot, index) => {
+                dot.addEventListener("click", function () {
+                    clearTimeout(timer);
+                    showSlides(slideIndex = index + 1);
+                })
+            });
+
+            if (n == undefined) {
+                n = ++slideIndex
+            }
+            if (n > slides.length) {
+                slideIndex = 1
+            }
+            if (n < 1) {
+                slideIndex = slides.length
+            }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+            timer = setTimeout(showSlides, 100000);
+        }
+    }
+
+
+    ///burger-menu
+
+    function burger() {
+        let menu = document.querySelector(".mob-menu");
+        let openbtn = document.querySelector(".burger-open");
+        let closebtn = document.querySelector(".burger-close");
+
+        openbtn.addEventListener("click", show);
+        closebtn.addEventListener("click", hide);
+
+        function show() {
+            this.classList.remove("burger--visibility");
+            menu.style.transform = ("translate(0)");
+        }
+
+        function hide() {
+            openbtn.classList.add("burger--visibility");
+            menu.style.transform = ("translate(-500%)");
+        }
+
+
+    }
+
 
     //////preloader
 
@@ -73,145 +157,29 @@
 
     ////////slider in clients
 
-    var slideIndex = 0;
-    showSlides();
+    // var slideIndex = 0;
+    // showSlides();
 
-    function showSlides() {
-        var i;
-        var slides = document.getElementsByClassName("clients__slide");
-        var dots = document.getElementsByClassName("clients__dot");
-        for (i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";
-        }
-        slideIndex++;
-        if (slideIndex > slides.length) {
-            slideIndex = 1
-        }
-        for (i = 0; i < dots.length; i++) {
-            dots[i].className = dots[i].className.replace(" js-active", "");
-        }
-        slides[slideIndex - 1].style.display = "block";
-        dots[slideIndex - 1].className += " js-active";
-        setTimeout(showSlides, 2500); // Change image every 2 seconds
-    }
-
-    //////// validation form 
-
-    function jsForm() {
-        let form = document.querySelector('.js-form');
-        if (!form) return console.log('Форма не найдена');
-        form.setAttribute('novalidate', 'true');
-        let inputs = form.querySelectorAll('.form__input');
-        let isValid = true;
-        let errorClass = 'form__error';
-        let errors = {
-            default: errorClass,
-            required: errorClass + '--required',
-            pattern: errorClass + '--pattern'
-        }
-
-        form.addEventListener('submit', function (e) {
-            e.preventDefault();
-            isValid = true;
-            setToDefaultStyles();
-            // validate inputs
-            validateInputs();
-            // try to submit
-            submitForm();
-        });
-
-        function setToDefaultStyles() {
-            inputs.forEach(element => {
-                element.classList.remove(errors.default, errors.required, errors.pattern);
-            });
-        }
-
-        function validateInputs() {
-            inputs.forEach(element => {
-                isValid = checkOnRequired(element) && isValid; // true or false
-            });
-
-        };
-
-        function checkOnRequired(input) {
-            if (input.hasAttribute('required')) {
-                if (input.value.trim() === '') {
-                    input.classList.add(errors.required);
-
-                    return false;
-                } else {
-                    return true;
-                }
-            } else {
-                return true;
-            }
-        }
-
-        function submitForm() {
-            if (!isValid) return console.log('NOT VALID');
-            let femail = form.querySelector(".js-email");
-
-            if (validateEmail(femail.value)) {
-                console.log("ok");
-                isValid = true;
-            } else {
-                swal({
-                    type: 'error',
-                    title: 'Oops...',
-                    text: 'Please enter correct email!'
-                });
-                //alert("Please enter correct email");
-                isValid = false;
-                femail.classList.add(errors.pattern);
-
-            }
-
-            function validateEmail(email) {
-                let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-                return re.test(String(email).toLowerCase());
-            }
-            // AJAX
+    // function showSlides() {
+    //     var i;
+    //     var slides = document.getElementsByClassName("clients__slide");
+    //     var dots = document.getElementsByClassName("clients__dot");
+    //     for (i = 0; i < slides.length; i++) {
+    //         slides[i].style.display = "none";
+    //     }
+    //     slideIndex++;
+    //     if (slideIndex > slides.length) {
+    //         slideIndex = 1
+    //     }
+    //     for (i = 0; i < dots.length; i++) {
+    //         dots[i].className = dots[i].className.replace(" js-active", "");
+    //     }
+    //     slides[slideIndex - 1].style.display = "block";
+    //     dots[slideIndex - 1].className += " js-active";
+    //     setTimeout(showSlides, 2500); // Change image every 2 seconds
+    // }
 
 
-            // Success messages
-            if (isValid) {
-                //sendForm();
-
-                swal(
-                    'Good job!',
-                    'You log in!',
-                    'success'
-                )
-                form.querySelector('.form__btn').disabled = true;
-            } else {
-                form.reset();
-
-            }
-        }
-    }
-
-    ///burger-menu
-
-    function burger() {
-        let menu = document.querySelector(".mob-menu");
-        let openbtn = document.querySelector(".js-burger-open");
-        let closebtn = document.querySelector(".js-burger-close");
-
-        openbtn.addEventListener("click", show);
-        closebtn.addEventListener("click", hide);
-
-        function show() {
-            this.classList.remove("burger--visibility");
-            menu.style.transform = ("translate(0)");
-        }
-
-        function hide() {
-            openbtn.classList.add("burger--visibility");
-            menu.style.transform = ("translate(500%)");
-        }
-
-
-    }
     //////buttons modal
 
     function modal() {
