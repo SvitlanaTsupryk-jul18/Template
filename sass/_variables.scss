@@ -1,0 +1,62 @@
+$mainColor:linear-gradient(to right, #211b19, #4e3427);
+$textColor: #555555;
+$liteGrey:#8c8c8c;
+$hoverColor:#c7b299;
+$btnColor:#998675;
+$darkColor:#362f2d;
+$bgLigth:#f4f5f8;
+$white:white;
+$bgDark:rgba(17, 17, 17, 0.7);
+$mainFont:'Montserrat',
+sans-serif;
+$titleFont: 'Raleway',
+sans-serif;
+
+%sec-padding {
+    padding: 100px 0;
+}
+
+.container {
+    max-width: 1230px;
+    margin: 0 auto;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+body {
+    max-width: 1920px;
+    font-weight: 300;
+    scroll-behavior: smooth;
+}
+
+.btn {
+    font-size: 14px;
+    font-weight: 800;
+    text-transform: uppercase;
+    border-radius: 3px;
+    color: $white;
+    box-shadow: inset 0px -3px 0 0 #736357;
+    background-color: $btnColor;
+    width: 170px;
+    height: 50px;
+    margin: 50px auto;
+    border: none;
+    outline: none;
+    transition: all .3s;
+    cursor: pointer;
+
+    &:hover {
+        background-color: $hoverColor;
+        color: $darkColor;
+    }
+
+    &:active {
+        box-shadow: inset 0px 3px 0 0 #736357;
+    }
+}

@@ -6,5 +6,5 @@
             <feBlend in="compOut" in2="SourceGraphic"/>
         </filter>
     </defs>
-    <path fill-rule="evenodd" d="M1.974 72.979l38.021-36.481L1.974.018.005 2.022l35.929 34.476L.005 70.976l1.969 2.003z" filter="url(#a)"/>
+    <path fill-rule="evenodd" d="M1.974 72.979l38.021-36.481L1.974.018.005 2.022l35.929 34.476L.005 70.976l1.969 2.003z" fill="#fff" filter="url(#a)"/>
 </svg>
