@@ -1,3 +1,10 @@
+.realizations__text {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.75;
+  color: #8c8c8c;
+  padding: 24px 40px; }
+
 .container {
   max-width: 1230px;
   margin: 0 auto; }
@@ -12,7 +19,8 @@
 body {
   max-width: 1920px;
   font-weight: 300;
-  scroll-behavior: smooth; }
+  scroll-behavior: smooth;
+  font-family: "Montserrat", sans-serif; }
 
 .btn {
   font-size: 14px;
@@ -34,6 +42,12 @@ body {
     color: #362f2d; }
   .btn:active {
     box-shadow: inset 0px 3px 0 0 #736357; }
+
+.title {
+  font-size: 30px;
+  font-weight: 600;
+  color: #555555;
+  font-family: "Raleway", sans-serif; }
 
 .header {
   position: absolute;
@@ -104,7 +118,8 @@ body {
   color: white;
   font-size: 34px;
   padding-left: 14px;
-  font-family: "Raleway", sans-serif; }
+  font-family: "Raleway", sans-serif;
+  transition: all .2s; }
 
 .mob-menu {
   flex-direction: column;
@@ -153,7 +168,7 @@ body {
 
 .slides img {
   vertical-align: middle;
-  width: 100vw;
+  width: 100%;
   min-height: 300px;
   object-fit: cover;
   height: 100vh; }
@@ -333,3 +348,53 @@ body {
     margin: 20px 10px; }
     .service__text {
       padding-bottom: 15px; } }
+
+.realizations {
+  background-color: #fbfaf8;
+  padding-top: 80px;
+  text-align: center; }
+  .realizations__container {
+    position: relative;
+    height: 700px; }
+  .realizations__text {
+    width: 770px;
+    margin: 0 auto; }
+  .realizations__img {
+    position: absolute;
+    bottom: 0;
+    max-width: 100%; }
+    .realizations__img--left {
+      left: 0; }
+    .realizations__img--center {
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1; }
+    .realizations__img--right {
+      right: 0; }
+    .realizations__img:hover {
+      z-index: 2; }
+
+@media only screen and (max-width: 992px) {
+  .realizations__img {
+    width: 80%; }
+  .realizations__container {
+    height: 600px; } }
+
+@media only screen and (max-width: 768px) {
+  .realizations__img {
+    width: 70%; }
+  .realizations__container {
+    height: 450px; }
+  .realizations__text {
+    width: 100%; } }
+
+@media only screen and (max-width: 576px) {
+  .realizations {
+    padding-top: 20px; }
+    .realizations__title {
+      font-size: 26px;
+      padding: 0 20px; }
+    .realizations__text {
+      padding: 20px; }
+    .realizations__img {
+      width: 90%; } }

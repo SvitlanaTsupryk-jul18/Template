@@ -1,0 +1,87 @@
+.realizations {
+    background-color: $bgLigth;
+    padding-top: 80px;
+    text-align: center;
+
+    &__container {
+        position: relative;
+        height: 700px;
+    }
+
+    &__text {
+        @extend %text;
+        width: 770px;
+        margin: 0 auto;
+    }
+
+    &__img {
+        position: absolute;
+        bottom: 0;
+        max-width: 100%;
+
+        &--left {
+            left: 0;
+        }
+
+        &--center {
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+        }
+
+        &--right {
+            right: 0;
+        }
+
+        &:hover {
+            z-index: 2;
+        }
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    .realizations {
+        &__img {
+            width: 80%;
+        }
+
+        &__container {
+            height: 600px;
+        }
+    }
+}
+
+@media only screen and (max-width:768px) {
+    .realizations {
+        &__img {
+            width: 70%;
+        }
+
+        &__container {
+            height: 450px;
+        }
+
+        &__text {
+            width: 100%;
+        }
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    .realizations {
+        padding-top: 20px;
+
+        &__title {
+            font-size: 26px;
+            padding: 0 20px;
+        }
+
+        &__text {
+            padding: 20px;
+        }
+
+        &__img {
+            width: 90%;
+        }
+    }
+}
