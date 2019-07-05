@@ -1,0 +1,91 @@
+.services {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.service {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 266px;
+    margin: 80px 10px;
+    position: relative;
+
+    &__img {
+        margin: 0 auto;
+    }
+
+    &__img path {
+        transition: all .3s;
+    }
+
+    &:hover path {
+        fill: $hoverColor;
+    }
+
+    &__title {
+        font-family: $titleFont;
+        font-size: 22px;
+        font-weight: 600;
+        color: $textColor;
+        padding: 29px 0 19px 0;
+    }
+
+    &__text {
+        color: $liteGrey;
+        font-family: $mainFont;
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 1.71;
+        padding-bottom: 30px;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: 0px;
+        width: 70px;
+        height: 3px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #f1eee9;
+        transition: all .3s;
+    }
+
+    &:hover::after {
+        background-color: $hoverColor;
+    }
+}
+
+
+@media only screen and (max-width: 1140px) {
+    .service {
+        width: 200px;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    .service {
+        width: 266px;
+        margin: 40px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .service {
+        width: 250px;
+        margin: 40px 10px;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    .service {
+        width: 266px;
+        margin: 20px 10px;
+
+        &__text {
+            padding-bottom: 15px;
+        }
+    }
+}

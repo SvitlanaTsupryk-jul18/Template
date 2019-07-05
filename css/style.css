@@ -51,7 +51,6 @@ body {
   background: none;
   border: none;
   outline-color: white;
-  position: fixed;
   height: 55px;
   left: 10%;
   padding: 10px;
@@ -313,3 +312,24 @@ body {
     transition: all .3s; }
   .service:hover::after {
     background-color: #c7b299; }
+
+@media only screen and (max-width: 1140px) {
+  .service {
+    width: 200px; } }
+
+@media only screen and (max-width: 992px) {
+  .service {
+    width: 266px;
+    margin: 40px; } }
+
+@media only screen and (max-width: 768px) {
+  .service {
+    width: 250px;
+    margin: 40px 10px; } }
+
+@media only screen and (max-width: 576px) {
+  .service {
+    width: 266px;
+    margin: 20px 10px; }
+    .service__text {
+      padding-bottom: 15px; } }
