@@ -1,0 +1,93 @@
+.counters {
+    background-image: $mainColor;
+
+    &__inner {
+        display: flex;
+        justify-content: space-around;
+        text-align: center;
+        padding: 70px;
+        flex-wrap: wrap;
+    }
+}
+
+.counter {
+    text-align: center;
+    position: relative;
+    padding: 0 5px;
+
+    &__count {
+        font-size: 48px;
+        font-weight: 200;
+        line-height: 0.75;
+        color: $white;
+        padding-top: 30px;
+    }
+
+    &__name {
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 1.43;
+        color: $hoverColor;
+        text-transform: uppercase;
+        padding-top: 20px;
+        padding-bottom: 30px;
+
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: 0px;
+            width: 30px;
+            height: 2px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #f1eee9;
+        }
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    .counters__inner {
+        padding: 40px;
+        justify-content: space-evenly;
+    }
+}
+
+
+@media only screen and (max-width:768px) {
+    .counter {
+        &__count {
+            font-size: 36px;
+        }
+    }
+}
+
+@media only screen and (max-width:700px) {
+    .counter {
+        padding: 40px 40px 0 40px;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    .counters__inner {
+        padding: 0px;
+        justify-content: space-around;
+    }
+
+    .counter {
+        padding: 20px 40px;
+
+        &__img {
+            height: 30px;
+        }
+
+        &__name {
+            padding-bottom: 0px;
+        }
+    }
+}
+
+@media only screen and (max-width: 440px) {
+    .counters__inner {
+        display: block;
+    }
+}
