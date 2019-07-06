@@ -3,6 +3,7 @@
     slider();
     burger();
     counter();
+    tabs();
 
     // Preloader();
     // sliderAbout();
@@ -133,21 +134,22 @@
 
     /////////tabs in works
 
-    function Tabs() {
-        var works = document.querySelector(".works");
-        var tab = works.querySelectorAll('[data-item]');
-        var cont = works.querySelector('.works__content');
-        var tabLength = tab.length;
-        var tabcontent = cont.querySelectorAll('.works__tabcontent');
+    function tabs() {
+        let projects = document.querySelector(".projects");
+        let tab = projects.querySelectorAll('.projects__tablinks');
+        let cont = projects.querySelector('.projects__content');
+        let tabcontent = cont.querySelectorAll('.projects__tabcontent');
+
         tab.forEach(function (item, i, arr) {
             tab[i].addEventListener("click", show);
         });
 
         function show() {
+            projects.querySelector('[data-item="all"]').classList.remove("hovered");
             tabcontent.forEach(function (item, i, arr) {
                 tabcontent[i].classList.remove("show");
             });
-            var c = 'data-item =' + '"' + this.dataset.item + '"';
+            let c = 'data-item =' + '"' + this.dataset.item + '"';
             cont.querySelector("[" + c + "]").classList.add("show");
         };
     }
