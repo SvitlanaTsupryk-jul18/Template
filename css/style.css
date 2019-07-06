@@ -1,4 +1,4 @@
-.realizations__text {
+.realizations__text, .mobile__text, .mobile__list li {
   font-size: 16px;
   font-weight: 300;
   line-height: 1.75;
@@ -406,7 +406,8 @@ body {
     padding: 50px 30px;
     display: flex;
     justify-content: space-between;
-    align-items: center; }
+    align-items: center;
+    flex-wrap: wrap; }
   .text-box__title {
     font-family: "Raleway", sans-serif;
     font-size: 28px;
@@ -423,6 +424,13 @@ body {
 .colored {
   font-weight: normal;
   color: #c7b299; }
+
+@media only screen and (max-width: 800px) {
+  .text-box__inner {
+    padding: 20px;
+    justify-content: center; }
+  .text-box .btn {
+    margin: 20px; } }
 
 .counters {
   background-image: linear-gradient(to right, #211b19, #4e3427); }
@@ -468,7 +476,9 @@ body {
 
 @media only screen and (max-width: 768px) {
   .counter__count {
-    font-size: 36px; } }
+    font-size: 36px; }
+  .counters__inner {
+    justify-content: space-between; } }
 
 @media only screen and (max-width: 700px) {
   .counter {
@@ -483,8 +493,88 @@ body {
     .counter__img {
       height: 30px; }
     .counter__name {
-      padding-bottom: 0px; } }
+      padding-bottom: 0px; }
+  .title {
+    font-size: 26px;
+    text-align: center; } }
 
 @media only screen and (max-width: 440px) {
   .counters__inner {
     display: block; } }
+
+.mobile {
+  padding-top: 75px; }
+  .mobile__text {
+    text-align: justify;
+    padding-left: 0;
+    padding-right: 0; }
+  .mobile__img {
+    display: block;
+    float: left;
+    padding: 0 30px 0 75px; }
+  .mobile__inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-right: 14px; }
+  .mobile__list li {
+    margin-left: 50px;
+    line-height: 2;
+    padding: 0;
+    background-image: url(../images/icons/list.svg);
+    background-repeat: no-repeat;
+    background-position-y: 5px;
+    padding-left: 50px;
+    transition: all .3s; }
+    .mobile__list li:hover {
+      transform: translateX(20px); }
+
+@media only screen and (max-width: 992px) {
+  .mobile__img {
+    width: 50%; }
+  .mobile__list li {
+    margin-left: 0px; } }
+
+@media only screen and (max-width: 768px) {
+  .mobile {
+    padding: 20px; }
+    .mobile__img {
+      display: none; }
+    .mobile__list li {
+      margin-left: 20px; } }
+
+@media only screen and (max-width: 576px) {
+  .mobile__list li {
+    margin-left: 0;
+    line-height: 1.5; } }
+
+.brands {
+  background-image: url(../images/bottphoto.png);
+  background-size: cover;
+  padding: 70px 0;
+  clear: left; }
+  .brands__inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between; }
+  .brands__item {
+    padding: 30px;
+    display: block; }
+
+@media only screen and (max-width: 1100px) {
+  .brands {
+    padding: 0; }
+    .brands__item {
+      transform: scale(0.7);
+      padding: 0; } }
+
+@media only screen and (max-width: 860px) {
+  .brands__inner {
+    justify-content: space-around; }
+  .brands__item {
+    padding: 20px; } }
+
+@media only screen and (max-width: 576px) {
+  .brands__item {
+    padding: 0px; } }

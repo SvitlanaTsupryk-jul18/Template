@@ -3,6 +3,7 @@
 // @import 'services';
 // @import 'realizations';
 // @import 'counter';
+// @import 'mobile';
 
 
 $mainColor:linear-gradient(to right, #211b19, #4e3427);
@@ -599,6 +600,7 @@ body {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        flex-wrap: wrap;
     }
 
     &__title {
@@ -624,6 +626,19 @@ body {
 .colored {
     font-weight: normal;
     color: $hoverColor;
+}
+
+@media only screen and (max-width: 800px) {
+    .text-box {
+        &__inner {
+            padding: 20px;
+            justify-content: center;
+        }
+
+        .btn {
+            margin: 20px;
+        }
+    }
 }
 
 ///// 
@@ -692,6 +707,11 @@ body {
             font-size: 36px;
         }
     }
+
+    .counters__inner {
+        justify-content: space-between;
+    }
+
 }
 
 @media only screen and (max-width:700px) {
@@ -717,10 +737,144 @@ body {
             padding-bottom: 0px;
         }
     }
+
+    .title {
+        font-size: 26px;
+        text-align: center;
+    }
 }
 
 @media only screen and (max-width: 440px) {
     .counters__inner {
         display: block;
+    }
+}
+
+////mobile
+
+.mobile {
+    padding-top: 75px;
+
+    &__text {
+        @extend %text;
+        text-align: justify;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    &__img {
+        display: block;
+        float: left;
+        padding: 0 30px 0 75px;
+    }
+
+    &__inner {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-right: 14px;
+    }
+
+    &__list li {
+        margin-left: 50px;
+        @extend %text;
+        line-height: 2;
+        padding: 0;
+        background-image: url(../images/icons/list.svg);
+        background-repeat: no-repeat;
+        background-position-y: 5px;
+        padding-left: 50px;
+        transition: all .3s;
+
+        &:hover {
+            transform: translateX(20px);
+        }
+    }
+}
+
+
+@media only screen and (max-width: 992px) {
+    .mobile {
+        &__img {
+            width: 50%;
+        }
+
+        &__list li {
+            margin-left: 0px;
+        }
+    }
+}
+
+@media only screen and (max-width:768px) {
+    .mobile {
+        padding: 20px;
+
+        &__img {
+            display: none;
+        }
+
+        &__list li {
+            margin-left: 20px;
+        }
+    }
+
+}
+
+@media only screen and (max-width:576px) {
+    .mobile__list li {
+        margin-left: 0;
+        line-height: 1.5;
+    }
+}
+
+///brands
+
+.brands {
+    background-image: url(../images/bottphoto.png);
+    background-size: cover;
+    padding: 70px 0;
+    clear: left;
+
+    &__inner {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__item {
+        padding: 30px;
+        display: block;
+    }
+}
+
+
+@media only screen and (max-width:1100px) {
+    .brands {
+        padding: 0;
+
+        &__item {
+            transform: scale(.7);
+            padding: 0;
+        }
+    }
+}
+
+@media only screen and (max-width:860px) {
+    .brands {
+        &__inner {
+            justify-content: space-around;
+        }
+
+        &__item {
+            padding: 20px;
+        }
+    }
+}
+
+
+@media only screen and (max-width:576px) {
+    .brands__item {
+        padding: 0px;
     }
 }
