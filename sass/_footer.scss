@@ -1,0 +1,56 @@
+.footer {
+    background-color: $darkColor;
+    font-size: 13px;
+    font-weight: 300;
+
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        padding: 30px;
+        color: $textColor;
+        flex-wrap: wrap;
+    }
+
+    a {
+        color: $textColor;
+    }
+
+    &__left,
+    &__rigth {
+        padding: 15px 0;
+    }
+}
+
+.lite {
+    color: $liteGrey;
+    font-weight: 300;
+    padding: 10px;
+}
+
+@media only screen and (max-width:850px) {
+
+    .footer {
+
+        &__inner {
+            justify-content: center;
+            padding: 20px;
+
+        }
+
+        &__left,
+        &__rigth {
+            padding: 15px;
+        }
+    }
+}
+
+@media only screen and (max-width:576px) {
+    .footer {
+
+        &__left,
+        &__rigth {
+            line-height: 2;
+            padding: 10px 0;
+        }
+    }
+}
