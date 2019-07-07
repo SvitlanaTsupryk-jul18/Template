@@ -4,17 +4,8 @@
     burger();
     counter();
     tabs();
+    smoothScrollLinks();
 
-    // Preloader();
-    // sliderAbout();
-    // Tabs();
-    // jsForm();
-    // burger();
-    // modal();
-    // smoothScrollLinks();
-    // toTop();
-    // Tween();
-    // scrollMagic();
 
     ///slider
 
@@ -168,6 +159,5 @@
             });
         });
     }
-
 
 })();
