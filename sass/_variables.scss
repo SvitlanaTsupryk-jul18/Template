@@ -4,7 +4,7 @@ $liteGrey:#8c8c8c;
 $hoverColor:#c7b299;
 $btnColor:#998675;
 $darkColor:#362f2d;
-$bgLigth:#f4f5f8;
+$bgLigth:#fbfaf8;
 $white:white;
 $bgDark:rgba(17, 17, 17, 0.7);
 $mainFont:'Montserrat',
@@ -12,8 +12,12 @@ sans-serif;
 $titleFont: 'Raleway',
 sans-serif;
 
-%sec-padding {
-    padding: 100px 0;
+%text {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.75;
+    color: $liteGrey;
+    padding: 24px 40px;
 }
 
 .container {
@@ -33,6 +37,7 @@ body {
     max-width: 1920px;
     font-weight: 300;
     scroll-behavior: smooth;
+    font-family: $mainFont;
 }
 
 .btn {
@@ -59,4 +64,11 @@ body {
     &:active {
         box-shadow: inset 0px 3px 0 0 #736357;
     }
+}
+
+.title {
+    font-size: 30px;
+    font-weight: 600;
+    color: $textColor;
+    font-family: $titleFont;
 }

@@ -110,6 +110,7 @@
         font-size: 20px;
         font-weight: 500;
         color: $hoverColor;
+        font-family: $titleFont;
     }
 
     &__category {
@@ -182,6 +183,10 @@
         &__info {
             padding: 50px 0;
         }
+    }
+
+    .projects__tabcontent {
+        padding-bottom: 20px;
     }
 }
 

@@ -15,7 +15,6 @@
     background: none;
     border: none;
     outline-color: $white;
-    position: fixed;
     height: 55px;
     left: 10%;
     padding: 10px;
@@ -87,6 +86,7 @@
     font-size: 34px;
     padding-left: 14px;
     font-family: $titleFont;
+    transition: all .2s;
 }
 
 .mob-menu {
@@ -149,7 +149,7 @@
 
 .slides img {
     vertical-align: middle;
-    width: 100vw;
+    width: 100%;
     min-height: 300px;
     object-fit: cover;
     height: 100vh;
