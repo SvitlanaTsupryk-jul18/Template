@@ -23,8 +23,9 @@
 
         function plusSlides(event) {
             clearTimeout(timer);
-            event.target === next ? n = 1 : n = -1;
+            event.target.dataset.dir === "next" ? n = 1 : n = -1;
             showSlides(slideIndex += n);
+
         }
 
         function showSlides(n) {
